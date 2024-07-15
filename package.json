@@ -1,6 +1,6 @@
 {
 	"name": "realmond",
-	"private": true,
+	"private": false,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
@@ -11,11 +11,18 @@
 		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,json}\""
 	},
 	"dependencies": {
+		"@radix-ui/react-avatar": "^1.1.0",
+		"@radix-ui/react-separator": "^1.1.0",
+		"@radix-ui/react-slot": "^1.1.0",
+		"@types/fuzzysearch": "^1.0.2",
+		"@types/lodash.debounce": "^4.0.9",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
-		"lucide-react": "^0.408.0",
+		"fuzzysearch": "^1.0.3",
+		"lodash.debounce": "^4.0.8",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
+		"react-error-boundary": "^4.0.13",
 		"tailwind-merge": "^2.4.0",
 		"tailwindcss-animate": "^1.0.7"
 	},
