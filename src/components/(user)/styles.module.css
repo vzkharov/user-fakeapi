@@ -1,0 +1,23 @@
+.card {
+	@apply w-full h-fit bg-background p-4 rounded-lg shadow-md space-y-4;
+}
+
+.card__header {
+	@apply flex items-center gap-4;
+}
+
+.card__body {
+	@apply h-[4.5rem] flex flex-col justify-between text-sm;
+}
+
+.user__avatar {
+	@apply rounded-full h-12 w-12 select-none;
+}
+
+.user__name {
+	@apply text-sm text-muted-foreground line-clamp-1 hover:text-foreground hover:cursor-pointer hover:underline;
+}
+
+.user__fullname {
+	@apply font-semibold line-clamp-1;
+}
