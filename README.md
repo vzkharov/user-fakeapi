@@ -1,6 +1,6 @@
 # User List Project
 
-This is a React project that uses TypeScript, Vite, and Tailwind CSS to create a user list with search functionality.
+This is a React project that uses TypeScript, Vite, and Tailwind CSS to fetch user list with search functionality.
 
 ## Table of Contents
 
