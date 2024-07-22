@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react'
 
 import { cn } from '~/lib/cn'
-import type { StyleProps } from '~/lib/types'
+import type { MergeWithHTMLProps } from '~/lib/types'
 
 import type { User } from '~/entities/user'
 
@@ -13,9 +13,14 @@ import { PhoneIcon, LocateIcon, MailOpenIcon } from '~/components/ui/icons'
 
 import styles from './styles.module.css'
 
-type UserCardProps = StyleProps & User
+type UserCardProps = MergeWithHTMLProps<
+	'article',
+	User & {
+		selected?: boolean
+	}
+>
 
-const UserCard = memo<UserCardProps>(({ style, className, ...user }) => {
+const UserCard = memo<UserCardProps>(({ style, className, onClick, selected = false, ...user }) => {
 	const userInfo = useMemo(
 		() => [
 			{ Icon: MailOpenIcon, text: user.email },
@@ -28,7 +33,8 @@ const UserCard = memo<UserCardProps>(({ style, className, ...user }) => {
 	return (
 		<Card
 			style={style}
-			className={cn(styles.card, className)}
+			onClick={onClick}
+			className={cn(styles.card, selected ? '!border-foreground' : '', className)}
 		>
 			<div className={styles.card__header}>
 				<Avatar className={styles.user__avatar}>
