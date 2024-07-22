@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 
 import { fetchUsers } from '~/fetchers/user'
 import { useUserSearch } from '~/features/user/useUserSearch'
@@ -18,6 +18,15 @@ const promise = fetchUsers(9)
 const Component = () => {
 	const data = use(promise)
 	const [query, onChange] = useUserSearch()
+	const [selectedUserIds, setSelectedUserIds] = useState<number[]>([])
+
+	const handleClick = useCallback(
+		(id: number) =>
+			selectedUserIds.includes(id)
+				? setSelectedUserIds((state) => state.filter((selectedUserId) => selectedUserId !== id))
+				: setSelectedUserIds((state) => [...state, id]),
+		[selectedUserIds],
+	)
 
 	const filteredData = useMemo(
 		() => selectUserBySearchString(data, query, ['phone', 'email', 'username', 'fullname', 'address']),
@@ -36,6 +45,8 @@ const Component = () => {
 						<UserCard
 							key={user.id}
 							{...user}
+							onClick={() => handleClick(user.id)}
+							selected={selectedUserIds.includes(user.id)}
 						/>
 					))}
 				</section>
