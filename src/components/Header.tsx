@@ -42,7 +42,7 @@ const Header = memo<StyleProps>(({ style, className }) => (
 const LINKS = {
 	github: {
 		id: 'github',
-		href: 'https://github.com/vzkharov/realmond#README',
+		href: 'https://github.com/vzkharov/user-fakeapi#README',
 		title: 'GitHub',
 		Icon: GithubIcon,
 	},
