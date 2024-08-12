@@ -20,7 +20,7 @@ const Header = memo<StyleProps>(({ style, className }) => (
 			className="flex items-center gap-2"
 		>
 			<MountainIcon className="h-6 w-6" />
-			<span className="text-lg font-medium">vzkharov</span>
+			<span className="text-lg font-medium">user-fakeapi.</span>
 		</a>
 		<div className="flex items-center gap-4">
 			{[LINKS.github, LINKS.mail].map(({ id, href, title, Icon }) => (
