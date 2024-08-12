@@ -16,7 +16,7 @@ To install and set up the project, follow these steps:
 1. Clone the repository:
 
       ```sh
-      git clone https://github.com/vzkharov/realmond.git
+      git clone https://github.com/vzkharov/user-fakeapi.git
       cd realmond
       ```
 
